@@ -26,8 +26,8 @@ class DatabaseSeeder extends Seeder
         //estas estan por revisar
         //-------------------------------------------------
 
-        //Categoria::factory(10)->create();
-        //Proveedor::factory(5)->create();
+        Categoria::factory(10)->create();
+        Proveedor::factory(5)->create();
         Articulo::factory(5)->create();
 
     }
