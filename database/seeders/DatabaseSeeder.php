@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         //$this->call(ClienteSeeder::class);
-        //User::factory(5)->create();
+        User::factory(5)->create();
         //Cliente::factory(1)->create();
         //estas estan por revisar
         //-------------------------------------------------

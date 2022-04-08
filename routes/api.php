@@ -33,3 +33,14 @@ Route::post('/articulos', [\App\Http\Controllers\ArticuloController::class, 'sto
 Route::put('/articulos/{id}', [\App\Http\Controllers\ArticuloController::class, 'update'])->name('actualizar_articulo');
 Route::delete('/articulos/{id}', [\App\Http\Controllers\ArticuloController::class, 'destroy'])->name('eliminar_articulo');
 
+Route::get('/usuarios', [\App\Http\Controllers\UsuarioController::class, 'index'])->name('listar_usuarios');
+Route::get('/usuarios/{id}', [\App\Http\Controllers\UsuarioController::class, 'show'])->name('ver_usuario');
+Route::post('/usuarios', [\App\Http\Controllers\UsuarioController::class, 'store'])->name('crear_usuario');
+Route::put('/usuarios/{id}', [\App\Http\Controllers\UsuarioController::class, 'update'])->name('actualizar_usuario');
+Route::delete('/usuarios/{id}', [\App\Http\Controllers\UsuarioController::class, 'destroy'])->name('eliminar_usuario');
+
+Route::get('/clientes', [\App\Http\Controllers\ClienteController::class, 'index'])->name('listar_clientes');
+Route::get('/clientes/{id}', [\App\Http\Controllers\ClienteController::class, 'show'])->name('ver_cliente');
+Route::post('/clientes', [\App\Http\Controllers\ClienteController::class, 'store'])->name('crear_cliente');
+Route::put('/clientes/{id}', [\App\Http\Controllers\ClienteController::class, 'update'])->name('actualizar_cliente');
+Route::delete('/clientes/{id}', [\App\Http\Controllers\ClienteController::class, 'destroy'])->name('eliminar_cliente');
