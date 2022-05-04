@@ -17,7 +17,7 @@ class CategoriaController extends Controller
     {
         //
         $categorias = Categoria::all();
-        return $categorias;
+        return view('categorias.index', compact('categorias'));
     }
 
     /**
@@ -53,9 +53,12 @@ class CategoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Categoria $categoria)
     {
         //
+
+       // dd("holaaaaaaaaaa");
+        return view('categorias.show', compact('categoria'));
     }
 
     /**

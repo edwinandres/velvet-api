@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Articulo;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ArticuloController extends Controller
 {
@@ -17,6 +18,12 @@ class ArticuloController extends Controller
         //
         $articulos = Articulo::all();
         return $articulos;
+    }
+
+    public function lista(){
+//dd("hola");
+        $articulos = Articulo::all();
+        return view('articulos.index', compact('articulos'));
     }
 
     /**
@@ -75,6 +82,7 @@ class ArticuloController extends Controller
     public function edit($id)
     {
         //
+        dd('este es el id', $id);
     }
 
     /**
@@ -109,5 +117,35 @@ class ArticuloController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function detalle(Request  $request)
+    {
+        //
+        //dd($request->toArray());
+        $articulos = Articulo::all();
+        $articulo = Articulo::find($request->id);
+        return view('articulos.detail', compact('articulos','articulo'));
+    }
+
+    public function catalogoUsuario(){
+        //dd("catalogo usurio");
+//        $stripe = new \Stripe\StripeClient(
+//            'sk_test_51Knu6CD9CNNKm4vlc02NMSCddauEDOLAgGW1KltSQ1srHr73eP42J450IFqzAZu4pWfmpsUrPlQBrxwy1NxvWFZq00Xkp59eNR'
+//        );
+//        $stripe->skus->all(['limit' => 3]);
+        \Stripe\Stripe::setApiKey('sk_test_51Knu6CD9CNNKm4vlc02NMSCddauEDOLAgGW1KltSQ1srHr73eP42J450IFqzAZu4pWfmpsUrPlQBrxwy1NxvWFZq00Xkp59eNR');
+        $skus = \Stripe\SKU::all();
+        $skus = \Stripe\Product::all();
+        //dd($skus);
+        //dd($stripe);
+        $articulos = Articulo::all();
+
+        return View('catalogo.listado', compact('articulos','skus'));
     }
 }
