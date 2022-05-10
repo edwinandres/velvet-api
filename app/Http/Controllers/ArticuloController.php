@@ -16,6 +16,7 @@ class ArticuloController extends Controller
     public function index()
     {
         //
+        dd("hola");
         $articulos = Articulo::all();
         return $articulos;
     }
@@ -66,11 +67,13 @@ class ArticuloController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Articulo $articulo)
     {
-        //
-        $articulo = new Articulo($id);
-        return $articulo;
+
+
+
+
+        return view('articulos.show', compact('articulo'));
     }
 
     /**
@@ -134,18 +137,11 @@ class ArticuloController extends Controller
     }
 
     public function catalogoUsuario(){
-        //dd("catalogo usurio");
-//        $stripe = new \Stripe\StripeClient(
-//            'sk_test_51Knu6CD9CNNKm4vlc02NMSCddauEDOLAgGW1KltSQ1srHr73eP42J450IFqzAZu4pWfmpsUrPlQBrxwy1NxvWFZq00Xkp59eNR'
-//        );
-//        $stripe->skus->all(['limit' => 3]);
-        \Stripe\Stripe::setApiKey('sk_test_51Knu6CD9CNNKm4vlc02NMSCddauEDOLAgGW1KltSQ1srHr73eP42J450IFqzAZu4pWfmpsUrPlQBrxwy1NxvWFZq00Xkp59eNR');
-        $skus = \Stripe\SKU::all();
-        $skus = \Stripe\Product::all();
-        //dd($skus);
-        //dd($stripe);
         $articulos = Articulo::all();
+        return view('catalogo.index', compact('articulos'));
+    }
 
-        return View('catalogo.listado', compact('articulos','skus'));
+    public function getRouteKeyName(){
+        return 'nombre';
     }
 }

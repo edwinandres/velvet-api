@@ -5334,9 +5334,8 @@ var app = new Vue({
 window.datatables = __webpack_require__(/*! ./datatables */ "./resources/js/datatables.js");
 window.pruebaresource = __webpack_require__(/*! ./pruebaresource */ "./resources/js/pruebaresource.js"); //window.pruebaresource = require('./pruebaresource')
 
-jquery__WEBPACK_IMPORTED_MODULE_0__(document).ready(function (e) {
-  e.preventDefault();
-  window.pruebaresource.iniciar();
+jquery__WEBPACK_IMPORTED_MODULE_0__(document).ready(function (e) {//e.preventDefault()
+  //window.pruebaresource.iniciar();
 });
 
 /***/ }),
@@ -5494,7 +5493,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "saludando": () => (/* binding */ saludando)
 /* harmony export */ });
 function iniciar() {
-  e.preventDefault();
   $("form");
   console.log("form").on("click", ".botonprueba", function () {
     console.log("click");

@@ -16,4 +16,9 @@ class Articulo extends Model
         'categoria_id',
         'proveedor_id'
     ];
+
+    //URL AMIGABLES
+    public function getRouteKeyName(){
+        return 'nombre';
+    }
 }

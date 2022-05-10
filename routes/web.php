@@ -26,7 +26,7 @@ Route::get('/articulos', [App\Http\Controllers\ArticuloController::class, 'lista
 Route::get('/articulo/edit/{id}', [App\Http\Controllers\ArticuloController::class, 'edit'])->name('articulo.edit');
 Route::get('/detalle', [App\Http\Controllers\ArticuloController::class, 'detalle'])->name('detalle');
 Route::get('/articulos/lista', [App\Http\Controllers\DatatableController::class, 'listarArticulos'])->name('articulos.lista');
-
+Route::get('/articulos/{articulo}',[App\Http\Controllers\ArticuloController::class, 'show'])->name('articulos.show');
 //CATALOGO USUARIO
 Route::get('/catalogo', [\App\Http\Controllers\ArticuloController::class, 'catalogoUsuario'])->name('catalogo.usuario');
 //Auth::routes();

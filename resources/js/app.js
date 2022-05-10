@@ -39,8 +39,8 @@ window.pruebaresource = require('./pruebaresource')
 
 //window.pruebaresource = require('./pruebaresource')
 $(document).ready(function (e) {
-    e.preventDefault()
-    window.pruebaresource.iniciar();
+    //e.preventDefault()
+    //window.pruebaresource.iniciar();
 
 
 });

@@ -43,7 +43,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "saludando": () => (/* binding */ saludando)
 /* harmony export */ });
 function iniciar() {
-  e.preventDefault();
   $("form");
   console.log("form").on("click", ".botonprueba", function () {
     console.log("click");

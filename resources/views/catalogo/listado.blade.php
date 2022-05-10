@@ -158,10 +158,7 @@
 <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="{{ asset('bootstrap.bundle') }}.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 
 
-<!-- Load Stripe.js on your website. -->
-<script src="https://js.stripe.com/v3"></script>
-<!--SDK MercadoPago.js V2-->
-<script src="https://sdk.mercadopago.com/js/v2"></script>
+<
 <script>
     // Agrega credenciales de SDK
     const mp = new MercadoPago("{{config('services.mercadopago.key')}}", {

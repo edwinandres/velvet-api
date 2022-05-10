@@ -39,6 +39,7 @@ class DatatableController extends Controller
 
 
             $btn_ziggy = "<a href='".route('articulo.edit',['id'=>$registro->id,'nombre'=>'edwin'])."'  class='btn btn-success btn-xs'>Ziggy</a>";
+            $btn_articulos_show = "<a href='".route('articulos.show',['id'=>$registro->id])."'  class='btn btn-success btn-xs'>Ziggy</a>";
             $btn1 = '<a href="detalle/'.$registro->id.'" class="btn btn-success btn-xs">Form Details</a>';
             $btn = '<a href="detalle/"  class="btn btn-success btn-xs">Form Details</a>';
             $otro_boton = '<a window.location.href="{{ route(\'articulo.edit\', $registro->id) }}" class="btn btn-warning">'.'ver'.'</a>';
@@ -47,7 +48,7 @@ class DatatableController extends Controller
             $boton_editar = "<a href='" . url('ArticuloController@edit', ['id' => $registro->id]) . "'   title='Editar'><i class='fas carousel-fade'></i></a>";
             //$boton_ver_detalle = "<a href='" . action('authenticated\evento\EventoController@show', ['id' => $evento->id]) . "' class='fas fa-external-link-alt fa-1_75x opacity-50 mr-1' title='Ver detalle'></a>";
             $nombre = $registro->nombre;
-            $opciones = $boton_editar.$boton_prueba.$otro_boton.$btn.$btn_ziggy;
+            $opciones = $boton_editar.$boton_prueba.$otro_boton.$btn.$btn_ziggy.$btn_articulos_show;
 
             $data_arr[] = array(
 
