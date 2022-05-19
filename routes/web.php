@@ -37,3 +37,8 @@ Route::get('/carro', [\App\Http\Controllers\CarroController::class, 'llamarCheck
 
 Route::get('/categorias/{categoria}' ,[\App\Http\Controllers\CategoriaController::class, 'show'])->name('categorias.show');
 Route::get('/categorias' ,[\App\Http\Controllers\CategoriaController::class, 'show'])->name('categorias');
+
+
+Route::get('/prueba', function(){
+    \Cart::destroy();
+})->name('prueba');

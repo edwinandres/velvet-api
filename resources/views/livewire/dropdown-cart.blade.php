@@ -9,6 +9,21 @@
             <a class="dropdown-item" href="#">Action</a>
             <a class="dropdown-item" href="#">Another action</a>
             <a class="dropdown-item" href="#">Something else here</a>
+            <ul>
+                @forelse(Cart::content() as $item)
+                    <p>si tiene items</p>
+                    <li class="flex">
+                        <img src="{{$item->options->image}}" alt=""/>
+                        <article>
+                            <h1>{{$item->name}}</h1>
+                            <p>Cantidad {{$item->qty}}</p>
+                            <p>Precio {{$item->price}}</p>
+                        </article>
+                    </li>
+                @empty
+                    <p>No tiene items</p>
+                @endforelse
+            </ul>
         </div>
     </div>
     <ul>
@@ -23,6 +38,20 @@
 
             </ul>
         </li>
+    </ul>
+
+    <ul>
+        @forelse(Cart::content() as $item)
+            <p>si tiene items</p>
+            <li class="flex">
+                <img src="{{$item->options->image}}" alt=""/>
+                <article>
+                    <h1>{{$item->name}}</h1>
+                </article>
+            </li>
+        @empty
+            <p>No tiene items</p>
+        @endforelse
     </ul>
 
 
