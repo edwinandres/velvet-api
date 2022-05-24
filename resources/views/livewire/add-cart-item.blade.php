@@ -1,6 +1,8 @@
 <div>
     {{-- Nothing in the world is as soft and yielding as water. --}}
 
+    <p>Stock disponible: {{$articulo->stock}}</p>
+
     <div class="d-inline-block">
         <div>
             <button wire:click="saludar({{$articulo->nombre}})" type="button">actualizar</button>

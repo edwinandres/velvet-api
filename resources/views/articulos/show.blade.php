@@ -12,6 +12,7 @@
             <i class="fas fa-truck">hoal</i>
             <h5 class="card-title">{{$articulo->nombre}}</h5>
             <h5 class="card-title">Precio venta: ${{$articulo->precio_venta}}</h5>
+            <p>Disponibles: {{$articulo->stock}}</p>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             <a href="{{route('catalogo.usuario')}}" class="btn btn-primary">Go somewhere</a>
             <a href="#" class="btn btn-primary"> Agregar al carrito</a>

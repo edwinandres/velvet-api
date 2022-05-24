@@ -19,7 +19,8 @@ class AddCartItem extends Component
     }
 
     public function mount(){
-        $this->quantity = $this->articulo->cantidad;
+        //$this->quantity = $this->articulo->cantidad;
+        $this->quantity = qty_available($this->articulo->id);
         $this->options['image'] = Storage::url($this->articulo->image);
     }
 
@@ -33,6 +34,10 @@ class AddCartItem extends Component
             'options' => $this->options
             //'precio_compra'=> $this->articulo->precio_compra
         ]);
+        $this->quantity = qty_available($this->articulo->id);
+        $this->reset('qty');
+        //emitimos un evento que el componente dropdown va a escuchar y ejecutara el render
+        $this->emitTo('dropdown-cart', 'render');
     }
 
     public function saludar($nombre){

@@ -17,8 +17,18 @@ class Articulo extends Model
         'proveedor_id'
     ];
 
+    //accesores
+    public function getStockAttribute(){
+        return $this->inventario->cantidad;
+    }
+
     //URL AMIGABLES
     public function getRouteKeyName(){
         return 'nombre';
+    }
+
+
+    public function inventario(){
+        return $this->hasOne(Inventario::class);
     }
 }

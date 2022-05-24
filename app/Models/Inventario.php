@@ -13,4 +13,8 @@ class Inventario extends Model
         'cantidad',
         'articulo_id'
     ];
+
+    public function articulo(){
+        return $this->hasOne(Articulo::class);
+    }
 }
