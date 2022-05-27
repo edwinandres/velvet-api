@@ -25,5 +25,11 @@ class ClienteSeeder extends Seeder
 
         $user->save();*/
 
+        User::create([
+            'name'=>'Edwin Roman',
+            'email'=>'pazamoryperdon@gmail.com',
+            'password'=> bcrypt('123456789')
+        ]);
+
     }
 }

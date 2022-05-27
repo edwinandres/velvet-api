@@ -9,10 +9,16 @@ class Search extends Component
 {
 
     public $search;
+    public $open = true;
 
     public function render()
     {
-        $articulos = Articulo::where('nombre','ILIKE',"%". $this->search . "%")->get();
+        if($this->search){
+            $articulos = Articulo::where('nombre','ILIKE',"%". $this->search . "%")->get();
+        }else{
+            $articulos = [];
+        }
+
         return view('livewire.search', compact("articulos"));
     }
 }

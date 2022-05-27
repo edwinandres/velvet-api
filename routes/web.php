@@ -42,3 +42,10 @@ Route::get('/categorias' ,[\App\Http\Controllers\CategoriaController::class, 'sh
 Route::get('/prueba', function(){
     \Cart::destroy();
 })->name('prueba');
+
+
+Route::get('shopping-cart', \App\Http\Livewire\ShoppingCart::class)->name('shopping-cart');
+
+Route::get('search', \App\Http\Controllers\SearchController::class)->name('search');
+
+Route::get('orders/create', \App\Http\Livewire\CreateOrder::class)->middleware('auth')->name('orders.create');

@@ -2,11 +2,11 @@
     {{-- Because she competes with no one, no one can compete with her. --}}
     {{--AQUI VA EL CARRITO DE COMPRAS TIPO DROPDOWN--}}
     <div class="dropdown">
-{{--        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--            <i class="fa-solid fa-cart-shopping"></i>--}}
-{{--            <label>{{Cart::count()}}</label>--}}
-{{--            Dropdown button--}}
-{{--        </button>--}}
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <label>{{Cart::count()}}</label>
+            Dropdown button
+        </button>
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 {{--            <a class="dropdown-item" href="#">Action</a>--}}
@@ -31,7 +31,10 @@
                 <div>
                     <p><span class="fw-bold">Total:</span> {{Cart::subtotal()}}</p>
                 </div>
+            <a href="{{route('shopping-cart')}}">
                 <button>Ir al carro de compras</button>
+            </a>
+
             @endif
         </div>
     </div>
