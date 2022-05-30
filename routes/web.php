@@ -49,3 +49,5 @@ Route::get('shopping-cart', \App\Http\Livewire\ShoppingCart::class)->name('shopp
 Route::get('search', \App\Http\Controllers\SearchController::class)->name('search');
 
 Route::get('orders/create', \App\Http\Livewire\CreateOrder::class)->middleware('auth')->name('orders.create');
+
+Route::get('orders/{order}/payment',[\App\Http\Controllers\OrderController::class, 'payment'])->name('orders.payment');

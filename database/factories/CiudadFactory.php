@@ -16,7 +16,7 @@ class CiudadFactory extends Factory
         return [
             //
             'nombre' => $this->faker->word(),
-            'costo' => $this->faker->randomElement([5,10,15]),
+            'costo' => $this->faker->randomElement([5000,6000,7000,8000]),
             //'departamento_id' => $this->faker->word()
         ];
     }
