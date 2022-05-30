@@ -51,4 +51,12 @@ class User extends Authenticatable
     public function orders(){
         return $this->hasMany(Order::class);
     }
+
+    public function adminlte_image(){
+        return 'https://picsum.photos/300/300';
+    }
+
+    public function adminlte_desc(){
+        return "Administrador";
+    }
 }

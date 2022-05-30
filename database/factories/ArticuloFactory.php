@@ -21,11 +21,13 @@ class ArticuloFactory extends Factory
 
         return [
             //
-            'nombre' => $this->faker->name(),
-            'precio_compra' => $this->faker->randomDigit(),
-            'precio_venta' => $this->faker->randomDigit(),
+            'nombre' => $this->faker->word(),
+            'precio_compra' => $this->faker->randomElement([10000,15000,20000,30000,50000]),
+            'precio_venta' => $this->faker->randomElement([10000,15000,20000,30000,50000]),
             'categoria_id' => Categoria::all()->random()->id,
             'proveedor_id' => Proveedor::all()->random()->id,
+            'imagen_url'=> $this->faker->imageUrl(150,150),
+            'descripcion'=>$this->faker->text()
 
         ];
     }

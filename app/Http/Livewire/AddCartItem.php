@@ -22,6 +22,9 @@ class AddCartItem extends Component
         //$this->quantity = $this->articulo->cantidad;
         $this->quantity = qty_available($this->articulo->id);
         $this->options['image'] = Storage::url($this->articulo->image);
+        $this->options['imagen_url'] = $this->articulo->imagen_url;
+
+
     }
 
     public function agregarAlCarro(){

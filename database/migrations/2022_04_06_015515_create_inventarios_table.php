@@ -19,7 +19,7 @@ class CreateInventariosTable extends Migration
             $table->integer('articulo_id');
             $table->timestamps();
 
-            $table->foreign('articulo_id')->references('id')->on('articulos');
+            $table->foreign('articulo_id')->references('id')->on('articulos')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

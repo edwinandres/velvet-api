@@ -1,11 +1,11 @@
 <div>
     {{-- Because she competes with no one, no one can compete with her. --}}
     {{--AQUI VA EL CARRITO DE COMPRAS TIPO DROPDOWN--}}
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <label>{{Cart::count()}}</label>
-            Dropdown button
+    <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle d-inline-flex" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa-solid fa-cart-shopping mx-2 "></i>
+            <label class="alert-danger mx-2" >{{Cart::count()}}</label>
+
         </button>
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -14,15 +14,26 @@
 {{--            <a class="dropdown-item" href="#">Something else here</a>--}}
             <ul>
                 @forelse(Cart::content() as $item)
-                    <p>si tiene items</p>
-                    <li class="flex">
-                        <img src="{{$item->options->image}}" alt=""/>
-                        <article>
-                            <h1>{{$item->name}}</h1>
-                            <p>Cantidad {{$item->qty}}</p>
-                            <p>Precio {{$item->price}}</p>
-                        </article>
-                    </li>
+
+                    <div class="row d-inline-flex">
+
+                            <div class="col-2 card-body d-inline-flex">
+                                {{--                        <img src="{{$item->options->image}}" alt=""/>--}}
+                                <img width="50px;" src="{{$item->options->imagen_url}}" alt="{{$item->options->imagen_url}}"/>
+
+                            </div>
+
+
+                        <div class="col-10 d-inline-flex">
+                            <article>
+
+                                <p>{{$item->name}}</p>
+                                <p>Cantidad {{$item->qty}}</p>
+                                <p>Precio {{$item->price}}</p>
+                            </article>
+                        </div>
+                    </div>
+
                 @empty
                     <p>No tiene items</p>
                 @endforelse
@@ -32,7 +43,7 @@
                     <p><span class="fw-bold">Total:</span> {{Cart::subtotal()}}</p>
                 </div>
             <a href="{{route('shopping-cart')}}">
-                <button>Ir al carro de compras</button>
+                <button class="btn btn-info">Ir al carro de compras</button>
             </a>
 
             @endif

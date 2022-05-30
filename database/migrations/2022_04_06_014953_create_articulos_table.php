@@ -20,6 +20,9 @@ class CreateArticulosTable extends Migration
             $table->double('precio_venta');
             $table->integer('categoria_id');
             $table->integer('proveedor_id');
+            $table->string('imagen_url');
+            $table->string('descripcion');
+            $table->integer('status')->default(1);
             $table->timestamps();
 
             $table->foreign('categoria_id')->references('id')->on('categorias');

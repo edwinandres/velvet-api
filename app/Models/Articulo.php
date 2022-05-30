@@ -14,7 +14,10 @@ class Articulo extends Model
         'precio_compra',
         'precio_venta',
         'categoria_id',
-        'proveedor_id'
+        'proveedor_id',
+        'imagen_url',
+        'status',
+        'descripcion'
     ];
 
     //accesores
@@ -30,5 +33,10 @@ class Articulo extends Model
 
     public function inventario(){
         return $this->hasOne(Inventario::class);
+    }
+
+    //relacion uno a muchos polimorfica
+    public function images(){
+        return $this->morphMany(Image::class, 'imageable');
     }
 }

@@ -8,6 +8,6 @@ class CreateOrder extends Component
 {
     public function render()
     {
-        return view('livewire.create-order');
+        return view('livewire.create-order')->extends('layouts.app');
     }
 }

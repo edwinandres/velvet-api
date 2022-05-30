@@ -5,23 +5,28 @@
 
     <div class="d-inline-block">
         <div>
-            <button wire:click="saludar({{$articulo->nombre}})" type="button">actualizar</button>
-            <button wire:click="prueba">NUEVO</button>
-            <button wire:click="prueba2('{{$articulo->nombre}}')">NUEVO2</button>
+{{--            <button wire:click="saludar({{$articulo->nombre}})" type="button">actualizar</button>--}}
+{{--            <button wire:click="prueba">NUEVO</button>--}}
+{{--            <button wire:click="prueba2('{{$articulo->nombre}}')">NUEVO2</button>--}}
 
-            <p>{{$color}}</p>
-            <button @wire:target="saludar" @wire:click="saludar">boton wire</button>
+{{--            <p>{{$color}}</p>--}}
+{{--            <button @wire:target="saludar" @wire:click="saludar">boton wire</button>--}}
+            <button class="btn" onclick="decrement();">-</button>
             <span id="qty">{{$qty}}</span>
 
-            {{$articulo->nombre}}
-            <button onclick="increment();">+</button>
+{{--            {{$articulo->nombre}}--}}
+            <button class="btn" onclick="increment();">+</button>
         </div>
         <div>
             <button wire:click="agregarAlCarro"
                     wire:loading.attr="disabled"
-                    wire:target="agregarAlCarro">Agregar al carrito de compras
+                    wire:target="agregarAlCarro"
+                    class="btn btn-info mt-3"
+
+            >Agregar al carrito de compras
+
             </button>
-            <label>{{$estaencarro}}</label>
+{{--            <label>{{$estaencarro}}</label>--}}
         </div>
     </div>
 </div>
