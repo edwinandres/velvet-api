@@ -68,7 +68,7 @@
 
 <main role="main">
 
-    @php
+    {{--@php
         // SDK de Mercado Pago
         //require __DIR__ .  '/vendor/autoload.php';
         require base_path('vendor/autoload.php');
@@ -89,7 +89,7 @@
         $item->unit_price = 75;
         $preference->items = array($item);
         $preference->save();
-    @endphp
+    @endphp--}}
 
     <div class="album py-5 bg-light">
         <div class="container">
@@ -157,7 +157,7 @@
 <script src="{{ asset('jquery-3.3.1.slim.min.js') }}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="{{ asset('bootstrap.bundle') }}.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 
-
+<!--
 <
 <script>
     // Agrega credenciales de SDK
@@ -175,7 +175,7 @@
             label: "Pagar", // Cambia el texto del botón de pago (opcional)
         },
     });
-</script>
+</script>-->
 
 
 <div id="error-message"></div>
