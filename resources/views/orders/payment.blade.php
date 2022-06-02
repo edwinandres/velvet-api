@@ -11,6 +11,15 @@
 
     // Crea un objeto de preferencia
     $preference = new MercadoPago\Preference();
+    $shipments = new MercadoPago\Shipments();
+
+
+    $envio = floatval($order->shipping_cost);
+    //dd($envio);
+    $shipments->cost = $envio;
+    $shipments->mode = "not_specified";
+
+    $preference->shipments = $shipments;
 
     // Crea un ítem en la preferencia
     /*$item = new MercadoPago\Item();
@@ -27,7 +36,8 @@
         $articulos[] =$item;
     }
     $preference->back_urls = array(
-        "success"=>"https://www.tu-sitio/success",
+        //"success"=>"https://www.tu-sitio/success",
+        "success"=> route('orders.pay', $order),
         "failure"=>"https://www.tu-sitio/success",
         "pending"=>"https://www.tu-sitio/success"
     );
