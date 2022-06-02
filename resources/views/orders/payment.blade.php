@@ -1,6 +1,57 @@
 @extends('layouts.app')
 
+@php
+
+    // SDK de Mercado Pago
+    //require __DIR__ .  '/vendor/autoload.php';
+    require base_path('/vendor/autoload.php');
+    // Agrega credenciales
+    MercadoPago\SDK::setAccessToken(config('services.mercadopago.token'));
+    //$payment_methods = MercadoPago::get("/v1/payment_methods");
+
+    // Crea un objeto de preferencia
+    $preference = new MercadoPago\Preference();
+    $shipments = new MercadoPago\Shipments();
+
+
+    $envio = floatval($order->shipping_cost);
+    //dd($envio);
+    $shipments->cost = $envio;
+    $shipments->mode = "not_specified";
+
+    $preference->shipments = $shipments;
+
+    // Crea un ítem en la preferencia
+    /*$item = new MercadoPago\Item();
+    $item->title = 'Mi producto';
+    $item->quantity = 1;
+    $item->unit_price = 75;*/
+
+    foreach($items as $articulo){
+
+        $item = new MercadoPago\Item();
+        $item->title = $articulo->name;
+        $item->quantity = $articulo->qty;
+        $item->unit_price = $articulo->price;
+        $articulos[] =$item;
+    }
+    $preference->back_urls = array(
+        //"success"=>"https://www.tu-sitio/success",
+        "success"=> route('orders.pay', $order),
+        "failure"=>"https://www.tu-sitio/success",
+        "pending"=>"https://www.tu-sitio/success"
+    );
+    $preference->auto_return = "approved";
+
+
+    $preference->items = $articulos;
+    $preference->save();
+
+
+@endphp
 @section('content')
+
+
     <div class="container">
         <div class="card card-body rounded-lg shadow-lg mb-3">
             <p class="text-uppercase">
@@ -60,14 +111,18 @@
 
         <div class="card card-body rounded-lg shadow-lg mb-3 flex-fill">
             <div class="row">
-                <div class="col-6">
+                <div class="col-9">
                     <img style="width: 500px" src="{{asset('img/pagoCredito.png')}}" class="d-inline-flex"/>
                 </div>
-                <div class="col-6 align-items-right">
+                <div class="col-3 align-items-right">
                     <h5>Subtotal: {{$order->total -$order->shipping_cost}}</h5>
                     <h5>Envio: {{$order->shipping_cost}}</h5>
                     <h5>Pago: {{$order->total}}</h5>
+                    <div class="cho-container">
+{{--                        <button class="btn btn-success">Pagar</button>--}}
+                    </div>
                 </div>
+
 
             </div>
 
@@ -76,3 +131,31 @@
     </div>
 
 @endsection
+
+
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+
+{{--     SDK MercadoPago.js V2--}}
+
+
+<script>
+    function init() {
+
+        // Agrega credenciales de SDK
+        const mp = new MercadoPago("{{config('services.mercadopago.key')}}", {
+            locale: "es-CO",
+        });
+
+        // Inicializa el checkout
+        mp.checkout({
+            preference: {
+                id: '{{$preference->id}}',
+            },
+            render: {
+                container: ".cho-container", // Indica el nombre de la clase donde se mostrará el botón de pago
+                label: "Pagar", // Cambia el texto del botón de pago (opcional)
+            },
+        });
+    }
+</script>
+

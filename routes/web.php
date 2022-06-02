@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('catalogo.index');
+    return redirect()->route('catalogo.usuario');
 });
 
 Auth::routes();
@@ -48,6 +49,18 @@ Route::get('shopping-cart', \App\Http\Livewire\ShoppingCart::class)->name('shopp
 
 Route::get('search', \App\Http\Controllers\SearchController::class)->name('search');
 
-Route::get('orders/create', \App\Http\Livewire\CreateOrder::class)->middleware('auth')->name('orders.create');
 
-Route::get('orders/{order}/payment',[\App\Http\Controllers\OrderController::class, 'payment'])->name('orders.payment');
+Route::middleware(['auth'])->group(function(){
+
+    Route::get('orders', [\App\Http\Controllers\OrderController::class, 'index'])->name('orders.index');
+
+    Route::get('orders/create', \App\Http\Livewire\CreateOrder::class)->name('orders.create');
+
+    Route::get('orders/{order}',[\App\Http\Controllers\OrderController::class, 'show'])->name('orders.show');
+    Route::get('orders/{order}/payment',[\App\Http\Controllers\OrderController::class, 'payment'])->name('orders.payment');
+    Route::post('webhooks', \App\Http\Controllers\WebhooksController::class);
+
+//ruta provisional para notificar pagos en mercado pago
+    Route::get('orders/{order}/pay', [\App\Http\Controllers\OrderController::class,'pay'])->name('orders.pay');
+});
+

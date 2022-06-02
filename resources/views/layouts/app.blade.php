@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
 @livewireStyles
 </head>
-<body>
+<body onload="init()">
     <div id="app">
         @livewire('navigation')
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -84,6 +84,10 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    <a class="dropdown-item" href="{{ route('orders.index') }}"
+                                       >
+                                        {{ __('Mis ordenes') }}
+                                    </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
@@ -108,5 +112,7 @@
 <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 <script type="application/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
+
 </body>
+
 </html>
