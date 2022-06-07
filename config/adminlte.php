@@ -253,22 +253,29 @@ return [
             'route'=>'admin'
         ],
         [
-            'text'        => 'articulos',
+            'text'        => 'Articulos',
             'url'         => 'articulos',
             'icon'        => 'far fa-fw fa-file',
             //'label'       => 4,
             'label_color' => 'success',
         ],
         [
-            'text'        => 'departamentos',
+            'text'        => 'Departamentos',
             'url'         => 'departamentos',
             'icon'        => 'far fa-fw fa-file',
             //'label'       => 4,
             'label_color' => 'success',
         ],
         [
-            'text'        => 'barrios',
+            'text'        => 'Barrios',
             'url'         => 'barrios',
+            'icon'        => 'far fa-fw fa-file',
+            //'label'       => 4,
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Categorias',
+            'url'         => 'categorias',
             'icon'        => 'far fa-fw fa-file',
             //'label'       => 4,
             'label_color' => 'success',

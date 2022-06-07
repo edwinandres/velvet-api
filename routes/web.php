@@ -26,6 +26,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/articulos', [App\Http\Controllers\ArticuloController::class, 'lista'])->name('articulos');
 Route::get('/departamentos', [\App\Http\Controllers\DepartamentoController::class, 'lista'])->name('departamentos');
 Route::get('/barrios', [\App\Http\Controllers\BarrioController::class, 'lista'])->name('barrios');
+Route::get('/categorias', [\App\Http\Controllers\CategoriaController::class, 'lista'])->name('categorias');
 
 Route::get('/articulo/edit/{id}', [App\Http\Controllers\ArticuloController::class, 'edit'])->name('articulo.edit');
 Route::get('/detalle', [App\Http\Controllers\ArticuloController::class, 'detalle'])->name('detalle');
@@ -40,7 +41,7 @@ Route::get('/carro', [\App\Http\Controllers\CarroController::class, 'llamarCheck
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/categorias/{categoria}' ,[\App\Http\Controllers\CategoriaController::class, 'show'])->name('categorias.show');
-Route::get('/categorias' ,[\App\Http\Controllers\CategoriaController::class, 'show'])->name('categorias');
+//Route::get('/categorias' ,[\App\Http\Controllers\CategoriaController::class, 'show'])->name('categorias');
 
 
 Route::get('/prueba', function(){
