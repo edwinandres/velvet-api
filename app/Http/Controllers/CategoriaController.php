@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
 {
+
+
+
+    public function lista(){
+
+        $categorias = Categoria::all();
+        return view('categorias.index', compact('categorias'));
+    }
     /**
      * Display a listing of the resource.
      *
