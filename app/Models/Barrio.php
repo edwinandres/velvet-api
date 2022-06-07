@@ -14,4 +14,8 @@ class Barrio extends Model
     public function ordenes(){
         return $this->hasMany(Order::class);
     }
+
+    public function ciudad(){
+        return $this->belongsTo(Ciudad::class);
+    }
 }

@@ -24,6 +24,9 @@ Auth::routes();
 //ARTICULOS
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/articulos', [App\Http\Controllers\ArticuloController::class, 'lista'])->name('articulos');
+Route::get('/departamentos', [\App\Http\Controllers\DepartamentoController::class, 'lista'])->name('departamentos');
+Route::get('/barrios', [\App\Http\Controllers\BarrioController::class, 'lista'])->name('barrios');
+
 Route::get('/articulo/edit/{id}', [App\Http\Controllers\ArticuloController::class, 'edit'])->name('articulo.edit');
 Route::get('/detalle', [App\Http\Controllers\ArticuloController::class, 'detalle'])->name('detalle');
 Route::get('/articulos/lista', [App\Http\Controllers\DatatableController::class, 'listarArticulos'])->name('articulos.lista');
