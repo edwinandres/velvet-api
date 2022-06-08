@@ -32,7 +32,7 @@ class Articulo extends Model
 
 
     public function inventario(){
-        return $this->hasOne(Inventario::class);
+        return $this->hasOne(Inventario::class );
     }
 
     //relacion uno a muchos polimorfica

@@ -15,6 +15,8 @@ class Inventario extends Model
     ];
 
     public function articulo(){
-        return $this->hasOne(Articulo::class);
+        return $this->belongsTo(Articulo::class);
     }
+
+
 }

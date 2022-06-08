@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class ProveedorController extends Controller
 {
+
+    public function lista(){
+
+        $proveedores = Proveedor::all();
+        return view('proveedores.index', compact('proveedores'));
+    }
     /**
      * Display a listing of the resource.
      *

@@ -27,6 +27,10 @@ Route::get('/articulos', [App\Http\Controllers\ArticuloController::class, 'lista
 Route::get('/departamentos', [\App\Http\Controllers\DepartamentoController::class, 'lista'])->name('departamentos');
 Route::get('/barrios', [\App\Http\Controllers\BarrioController::class, 'lista'])->name('barrios');
 Route::get('/categorias', [\App\Http\Controllers\CategoriaController::class, 'lista'])->name('categorias');
+Route::get('/proveedores', [\App\Http\Controllers\ProveedorController::class, 'lista'])->name('proveedores');
+Route::get('/usuarios', [\App\Http\Controllers\UsuarioController::class, 'lista'])->name('usuarios');
+Route::get('/inventario', [\App\Http\Controllers\InventarioController::class, 'lista'])->name('inventario');
+
 
 Route::get('/articulo/edit/{id}', [App\Http\Controllers\ArticuloController::class, 'edit'])->name('articulo.edit');
 Route::get('/detalle', [App\Http\Controllers\ArticuloController::class, 'detalle'])->name('detalle');

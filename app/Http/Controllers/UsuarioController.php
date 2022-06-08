@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
 {
+
+
+    public function lista(){
+
+        $usuarios = User::all();
+        return view('usuarios.index', compact('usuarios'));
+    }
     /**
      * Display a listing of the resource.
      *
