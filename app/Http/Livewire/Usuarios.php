@@ -15,6 +15,8 @@ class Usuarios extends Component
     protected $paginationTheme = 'bootstrap';
 
     public $usuario_id,$nombre, $correo;
+    //public $id;
+    public $prueba =0;
     public $view = 'create';
 
 
@@ -37,8 +39,11 @@ class Usuarios extends Component
     }
 
     public function destroy($id){
-        User::destroy($id);
+
+            User::destroy($id);
     }
+
+
 
     public function edit($id){
         $usuario = User::find($id);
@@ -69,6 +74,11 @@ class Usuarios extends Component
         //$departamento = Departamento::latest('created_at')->first();
 
         $this->default();
+    }
+
+    public function delete(){
+
+        User::destroy($this->usuario_id);
     }
 
 }
