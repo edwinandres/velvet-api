@@ -31,4 +31,8 @@ class Categoria extends Model
     public function getRouteKeyName(){
         return 'nombre';
     }
+
+    public function articulos(){
+        return $this->hasMany(Articulo::class);
+    }
 }
