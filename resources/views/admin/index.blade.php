@@ -17,4 +17,5 @@
 
 @section('js')
     <script> console.log('Hi!'); </script>
+    <script src="{{ secure_asset('js/app.js') }}" defer></script>
 @stop
