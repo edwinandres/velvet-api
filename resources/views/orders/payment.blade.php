@@ -127,7 +127,7 @@
                     <div >
                         <div class="row mb-3">
                             <div class="col-9">
-                                <img style="width: 500px" src="{{secure_asset('img/pagoCredito.png')}}" class="d-inline-flex"/>
+                                <img style="width: 500px" src="{{asset('img/pagoCredito.png')}}" class="d-inline-flex"/>
                             </div>
                             <div class="col-3 align-items-right">
                                 <h5>Subtotal: {{$order->total -$order->shipping_cost}}</h5>
