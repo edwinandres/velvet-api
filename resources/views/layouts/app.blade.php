@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
 
-{{--    <script src="{{ asset('js/app.js') }}" defer></script>--}}
+{{--    <script src="{{ secure_asset('js/app.js') }}" defer></script>--}}
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="{{ secure_asset('js/app.js') }}" defer></script>
@@ -19,7 +19,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
 
-    <link rel="stylesheet" href="{{asset('vendor/fontawesome-free/css/all.min.css')}}"/>
+    <link rel="stylesheet" href="{{secure_asset('vendor/fontawesome-free/css/all.min.css')}}"/>
     @routes
 
 
@@ -32,7 +32,7 @@
 
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Styles Datatables y otros -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
