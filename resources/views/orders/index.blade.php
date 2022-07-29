@@ -6,41 +6,41 @@
             <div class="col-1">
 
             </div>
-            <div class="col-2">
+            <a class="col-2" style="color:white" href="{{route('orders.index')."?status=1"}}">
                 <div class="card bg-red " style="background-color: darkorange; height: 100px">
                     <p class="text-center">PENDIENTE</p>
-                    <p class="text-center mt-2">{{$orders->where('status',1)->count()}}</p>
+                    <p class="text-center mt-2">{{$pendiente}}</p>
                     <p class="text-center mt-2"><i class="fas fa fa-business-time"></i></p>
                 </div>
-            </div>
-            <div class="col-2">
+            </a>
+            <a class="col-2" style="color:white" href="{{route('orders.index')."?status=2"}}">
                 <div class="card bg-red" style=" background-color: gray; height: 100px">
                     <p class="text-center">RECIBIDO</p>
-                    <p class="text-center mt-2">{{$orders->where('status',2)->count()}}</p>
+                    <p class="text-center mt-2">{{$recibido}}</p>
                     <p class="text-center mt-2"><i class="fas fa fa-credit-card"></i></p>
                 </div>
-            </div>
-            <div class="col-2">
+            </a>
+            <a class="col-2" style="color:white" href="{{route('orders.index')."?status=3"}}">
                 <div class="card bg-red" style=" background-color: blue; height: 100px">
                     <p class="text-center">ENVIADO</p>
-                    <p class="text-center mt-2">{{$orders->where('status',3)->count()}}</p>
+                    <p class="text-center mt-2">{{$enviado}}</p>
                     <p class="text-center mt-2"><i class="fas fa fa-truck"></i></p>
                 </div>
-            </div>
-            <div class="col-2">
+            </a>
+            <a class="col-2" style="color:white" href="{{route('orders.index')."?status=4"}}">
                 <div class="card bg-red" style=" background-color: green; height: 100px">
                     <p class="text-center">ENTREGADO</p>
-                    <p class="text-center mt-2">{{$orders->where('status',4)->count()}}</p>
+                    <p class="text-center mt-2">{{$entregado}}</p>
                     <p class="text-center mt-2"><i class="fas fa fa-check-circle"></i></p>
                 </div>
-            </div>
-            <div class="col-2">
+            </a>
+            <a class="col-2" style="color:white" href="{{route('orders.index')."?status=5"}}">
                 <div class="card bg-red" style=" background-color: red; height: 100px">
                     <p class="text-center">ANULADO</p>
-                    <p class="text-center mt-2">{{$orders->where('status',5)->count()}}</p>
+                    <p class="text-center mt-2">{{$anulado}}</p>
                     <p class="text-center mt-2"><i class="fas fa fa-times-circle"></i></p>
                 </div>
-            </div>
+            </a>
 
         </section>
 
