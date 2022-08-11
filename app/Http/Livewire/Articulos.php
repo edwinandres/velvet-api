@@ -13,6 +13,8 @@ class Articulos extends Component
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
 
+    public $search;
+
     public $articulo_id,$nombre, $descripcion, $precio_compra, $precio_venta, $categorias, $categoria_id,
             $proveedores, $proveedor_id, $imagen_url;
 
@@ -40,7 +42,8 @@ class Articulos extends Component
         //$this->resetErrorBag();
         //$this->resetValidation();
         return view('livewire.articulos',[
-            'articulos'=>Articulo::where('status',1)->orderBy('id', 'desc')->paginate(10)
+//            'articulos'=>Articulo::where('status',1)->orderBy('id', 'desc')->paginate(10)
+            'articulos'=>Articulo::where('nombre','like','%'.$this->search.'%')->orderBy('id', 'desc')->paginate(10)
         ]);
     }
 

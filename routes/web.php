@@ -74,3 +74,6 @@ Route::middleware(['auth'])->group(function(){
     Route::get('orders/{order}/pay', [\App\Http\Controllers\OrderController::class,'pay'])->name('orders.pay');
 });
 
+Route::get('ordenes', [\App\Http\Controllers\AdminOrderController::class,'index'])->name('admin.orders.index');
+Route::get('ordenes/{orden}', [\App\Http\Controllers\AdminOrderController::class,'show'])->name('admin.orders.show');
+

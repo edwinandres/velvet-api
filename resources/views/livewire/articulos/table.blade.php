@@ -1,5 +1,11 @@
 <div>
+
     <h2>Listado de articulos</h2>
+    <div class="form-group">
+        <label>Buscar</label>
+        <input type="text" class="form-control" wire:model="search">
+
+    </div>
     <table class="table">
         <thead>
             <tr>
